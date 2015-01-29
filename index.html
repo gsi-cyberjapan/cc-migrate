@@ -49,10 +49,10 @@ function toNewParmQ(parmString) {
     } else if(values[0] == "did") {
       obj.base = values[1];
     } else if(values[0].match(/^lkey/)) {
-      var index = values[0].substring(4, 5);
+      var index = values[0].substring(4);
       lkeys[index] = values[1];
     } else if(values[0].match(/^lopa/)) {
-      var index = values[0].substring(4, 5);
+      var index = values[0].substring(4);
       lopas[index] = values[1];
     } else if(values[0] == "crs") {
       if(values[1] == 0) {
@@ -95,12 +95,12 @@ function getNewURL(url) {
       var s = toNewParmQ(queryUrl);
       newUrl += "?" + s;
     } else {
-      var queryUrl = url.substring(url.indexOf("?") + 1, url.length);
+      var queryUrl = url.substring(url.indexOf("?") + 1);
       var s = toNewParmQ(queryUrl);
       newUrl += "?" + s;
     }
   } else if(url.indexOf("#") > 0) {
-    var hashUrl = url.substring(url.indexOf("#") + 1, url.length);
+    var hashUrl = url.substring(url.indexOf("#") + 1);
     var s = toNewParmS(hashUrl);
     newUrl += "?" + s;
   }
